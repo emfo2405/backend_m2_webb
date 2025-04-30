@@ -3,6 +3,8 @@ onload = postExperience;
 async function postExperience() {
     let cvList = document.getElementById("cv-list");
 
+    cvList.innerHTML="";
+
     let response = await fetch('http://localhost:3000/api/experience', {
         method: 'GET',
         headers: {
@@ -43,7 +45,9 @@ async function deletePost(dataId) {
     let data = await response.json();
     console.log(data);
 
-    
+    if(response.ok) {
+        postExperience();
+    } 
 
     
 
