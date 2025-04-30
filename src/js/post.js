@@ -15,8 +15,13 @@ async function postExperience() {
 
     data.rows.forEach(input => {
         let li = document.createElement("li");
-        li.innerHTML = `<h3> ${input.companyname} -  ${input.jobtitle}</h3> <br>  ${input.location}, (${input.startdate.split("T")[0]} - ${input.enddate.split("T")[0]}) <br> ${input.description}`
+        li.innerHTML = `<h3 id="post-h3"> ${input.companyname} -  ${input.jobtitle}</h3> <br>  ${input.location}, (${input.startdate.split("T")[0]} - ${input.enddate.split("T")[0]}) <br> ${input.description}`
+
+        let deleteButton = document.createElement("button");
+        deleteButton.innerText = "Radera";
+        deleteButton.id = "delete-button";
 
         cvList.appendChild(li);
+        cvList.appendChild(deleteButton);
     });
 }
