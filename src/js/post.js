@@ -20,8 +20,31 @@ async function postExperience() {
         let deleteButton = document.createElement("button");
         deleteButton.innerText = "Radera";
         deleteButton.id = "delete-button";
+        let dataId = input.id;
+
+        deleteButton.onclick = () => deletePost(dataId);
 
         cvList.appendChild(li);
         cvList.appendChild(deleteButton);
     });
+}
+
+
+async function deletePost(dataId) {
+    
+
+    let response = await fetch(`http://localhost:3000/api/experience/${dataId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+
+    let data = await response.json();
+    console.log(data);
+
+    
+
+    
+
 }
