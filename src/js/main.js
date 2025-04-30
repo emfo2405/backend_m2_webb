@@ -1,3 +1,5 @@
+
+
 async function addExperience() {
 
     let companyName = document.getElementById("companyname");
@@ -30,4 +32,9 @@ async function addExperience() {
 
 let submitButton = document.getElementById("submit-button");
 
-submitButton.onclick = addExperience();
+submitButton.onclick = addExperience;
+
+
+
+
+
