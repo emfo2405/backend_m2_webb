@@ -1,7 +1,8 @@
 
-
+//Funktion för att lägga till ett inlägg i CV från formulär
 async function addExperience() {
 
+    //Hämta information från HTML-formulär
     let companyName = document.getElementById("companyname");
     let jobTitle = document.getElementById("jobtitle");
     let location = document.getElementById("location");
@@ -9,6 +10,7 @@ async function addExperience() {
     let endDate = document.getElementById("enddate");
     let description = document.getElementById("description");
 
+    //Hämtar värden inmatade i formuläret
     let experience = {
         companyname: companyName.value,
         jobtitle: jobTitle.value,
@@ -18,6 +20,7 @@ async function addExperience() {
         description: description.value
     }
 
+    //Kopplar till API och lägger till ny data i databas
     let response = await fetch('http://localhost:3000/api/experience', {
         method: 'POST',
         headers: {
@@ -30,8 +33,10 @@ async function addExperience() {
     console.log(data);
 }
 
+//Hämtar formulär-knapp för att lägga till information
 let submitButton = document.getElementById("submit-button");
 
+//Funktion för att lägga till i databasen körs när man klickar på knappen
 submitButton.onclick = addExperience;
 
 
