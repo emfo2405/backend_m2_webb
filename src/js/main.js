@@ -21,7 +21,7 @@ async function addExperience() {
     }
 
     //Kopplar till API och lägger till ny data i databas
-    let response = await fetch('http://localhost:3000/api/experience', {
+    let response = await fetch('/api/experience', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

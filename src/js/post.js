@@ -10,7 +10,7 @@ async function postExperience() {
     cvList.innerHTML="";
 
     //Hämtar in information från API och databasen som ska publiceras
-    let response = await fetch('http://localhost:3000/api/experience', {
+    let response = await fetch('/api/experience', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ async function postExperience() {
 async function deletePost(dataId) {
     
 //Hämtar information från API för att kunna radera inlägg
-    let response = await fetch(`http://localhost:3000/api/experience/${dataId}`, {
+    let response = await fetch(`/api/experience/${dataId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
