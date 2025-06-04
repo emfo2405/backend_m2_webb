@@ -21,7 +21,7 @@ async function addExperience() {
     }
 
     //Kopplar till API och lägger till ny data i databas
-    let response = await fetch('https://backend-m2-webb.onrender.com/api/experience', {
+    let response = await fetch('https://backend-m2.onrender.com/api/experience', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
